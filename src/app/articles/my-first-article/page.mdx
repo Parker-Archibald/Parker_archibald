@@ -1,0 +1,72 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Parker Archibald',
+  date: '2024-12-29',
+  title: 'My First Article - Debouncing',
+  description:
+    "I've always wanted to start a blog, but was never sure what to write. I've decided to document my journey as a Junior developer, which will include what I learn from month to month.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+I've always wanted to start a blog, but was never sure what to write. I've decided to document my journey as a Junior developer, which will include what I learn from month to month.
+
+## My Decision
+
+When I first started programming, everything felt so new and exciting, but very confusing. I had previously learned another language - [Portuguese](#) - and this was just like learning that.
+In Portuguese, there are several different ways to conjugate verbs depending on who or what that verb is applying to. Once I understood the basics of these conjugations, I was able to conjugate
+just about any verb. Similarly, in programming, as I learned the basics I was more able to apply more difficult ideas and methodologies to my code. After about 4 years of programming with [ReactJS](#) and [NextJS](#), I have decided
+to document what I learn each month. I hope that this can not only help me to remember what I have learned and give me a place where I can reference those learnings, but also maybe help any other
+junior programmers who are trying to break into the development industry.
+
+## What I learned in December
+
+I have been working on a project for an [Image Consultant](#) who is a client of mine. In their website they have several options for services that potential customers can look at. Since there could be
+a large selection of services, we decided to add a search bar where customers could search for tags or service names to find what they are looking for quicker. I wanted this search input to filter the
+results without having to click on any button. *(Below is just a simple example)*
+
+```jsx
+const [searchInput, setSearchInput] = useState('')
+return (
+  <div>
+    <input type='search' onChange={(e) => setSearchInput(e.target.value)}/>
+  </div>
+)
+```
+
+What I kept running into was that each character entered into the search input would start filtering out which services were showing. Although this technically did what I was wanting, I knew it would be
+better to only filter after the customer was done typing, or at least took a short break.
+
+## My Solution
+
+As I searched for possible solutions, I came across the idea of [debouncing](https://www.freecodecamp.org/news/javascript-debounce-example/), which, in my case, would delay the filtering until a defined
+amount of time after the user was done typing. Essentially, the process would be:
+
+1. Capture the user's input.
+2. Set a timeout on updating the searchInput state.
+3. If the user kept typing and the function to update the state was called again, clear the timeout and then reset the timeout
+4. Once the user stops typing, the timeout will be allowed to finish, thus updating the state and filtering the services.
+
+What I ended up doing was creating a variable where the timeout would be saved.
+
+```jsx
+let tempVar;
+```
+Then I created a function that would first clear the new variable of the old timeout and assign the new timeout to it. This function would be called each time the search input had a change.
+
+```jsx
+const updateSearchInput = (input) => {
+  clearTimeout(tempVar);
+  tempVar = setTimeOut(() => {
+    setSearchInput(input)
+  }, 1000)
+}
+```
+
+This ensured that each change made to the search input would reset the timeout on updating the filter. This really improved the flow of searching for items and I believe will affect the user's experience.

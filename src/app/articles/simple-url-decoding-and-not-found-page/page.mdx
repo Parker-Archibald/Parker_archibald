@@ -1,0 +1,89 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Parker Archibald',
+  date: '2025-02-18',
+  title: 'Simple Url Decoding and Not Found Redirecting',
+  description:
+    'Although simple, being able to decode urls as well as redirecting ineligable users to the not found page can be a powerful tool. Nextjs makes this simple.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Although simple, being able to decode urls as well as redirecting ineligable users to the not found page can be a powerful tool. Nextjs makes this simple.
+
+## decodeURI()
+In many cases, you might need to get certain parameters from a url which you might not have been able to pass through props. For examle, let's say you have an application where users can search for different movies.
+You might want to pass the searched content through the url so that it can be used on a page that displays searched content. First, in a Nextjs application, you would create a new folder to be used to 
+display the searched content on. Add another folder under that in brackets, this represents a placeholder for anything that is searched. Then, below that, a tsx or jsx file named page.
+
+```
+> search
+  > [term]
+    > page.tsx
+```
+
+Then add all of your page content in the page.tsx/jsx (in this case, tsx) file. Let's say the user starts at the root directory (<a href="localhost:3000">localhost:3000/</a>). They are able to search for
+a movie, which then redirects them to our search page. The searched item is passed through the url like so: <a href="localhost:3000/search/batman%20and%20robin">localhost:3000/search/batman%20and%20robin</a>.
+We are able to access the passed "term" (in this case batman and robin) by desctructuring the params - if we were to console log the "term" that is passed in, we would get "batman%20and%20robin":
+
+```jsx
+type Props = {
+  params: {
+    term: string;
+  }
+}
+
+const Search = ({params: {term}}: Props) => {
+
+  console.log(term)
+  //expect "batman%20and%20robin"
+
+  return (...)
+}
+```
+
+In order to get the true searched item with spaces, we can use decodeURI():
+
+```jsx
+type Props = {
+  params: {
+    term: string;
+  }
+}
+
+const Search = ({params: {term}}: Props) => {
+
+  console.log(decodeURI(term))
+  //expect "batman and robin"
+
+  return (...)
+}
+```
+
+## notFound()
+
+This is another simple, yet quick and powerful tool. Let's go along with the movie example from above ☝️. Let's say a user goes to the search page, but didn't actually search anything.
+The page that would be displayed would be blank, as there wasn't anything to display. Instead of displaying nothing, we could just redirect to the "404 Not Found" page. This is simply done by using the
+<a>notFound()</a> function. In this case, we would want to check if the term was provided or not, if not then redirect to the not found page.
+
+```jsx
+type Props = {
+  params: {
+    term: string;
+  }
+}
+
+const Search = ({params: {term}}: Props) => {
+
+  if(!term) notFound();
+
+  return (...)
+}
+```
+This simply says, if there was no "term" then redirect to the Not Found page. These are two simple things that I learned over the past month that I think will enable me to create web applications.
