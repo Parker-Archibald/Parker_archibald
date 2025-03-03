@@ -167,7 +167,7 @@ export default function Projects() {
             <Card.Description>{project.description}</Card.Description>
             <div className='my-4 flex space-x-4'>
               {project.tech.map(img => (
-                <div>
+                <div key={img}>
                   <Image src={img} alt='' width={100} height={100} className='w-8 h-8 rounded-full bg-white' />
                 </div>
               ))}

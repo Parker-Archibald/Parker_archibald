@@ -53,15 +53,15 @@ export default function Uses() {
             I always have enough power.
           </Tool>
           <Tool title="Samsung Odyssey G9">
-            I love this 49", 240hz monitor. There is plenty of real estate to have several programs open at once.
-            Multi-tasking on this monitor is seamless and I tend to use the full 49" everytime I turn on my computer.
+            I love this 49&quot;, 240hz monitor. There is plenty of real estate to have several programs open at once.
+            Multi-tasking on this monitor is seamless and I tend to use the full 49&quot; everytime I turn on my computer.
           </Tool>
           <Tool title="Variuos range of custom keyboards">
-            It's true, I like to build my own keyboards. This includes picking out a case and configuring it for certain sound signatures.
+            It&apos;s true, I like to build my own keyboards. This includes picking out a case and configuring it for certain sound signatures.
             I then select switches for a desired typing feel, then add on keycaps to spruce up the look!
           </Tool>
           <Tool title="Logitech MX Master 3S">
-            I've always enjoyed logitech hardware, there is a certain refinement that they provide that just feels great.
+            I&apos;ve always enjoyed logitech hardware, there is a certain refinement that they provide that just feels great.
             The MX Master 3S is no exception, it is ergonomic, quiet and adds an additional scroll wheel for horizontal scrolling, which adds to my productivity.
           </Tool>
           <Tool title="Samsung Galaxy Tab S8">
@@ -69,7 +69,7 @@ export default function Uses() {
           </Tool>
           <Tool title="Logitech Gfit earbuds">
             These ear buds are super enjoyable to use. The sound quality is great and they mold to my ears perfectly. I used to use headphones
-            as ear buds would hurt my ears, but since I started using these I haven't gone back.
+            as ear buds would hurt my ears, but since I started using these I haven&apos;t gone back.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
@@ -80,8 +80,8 @@ export default function Uses() {
             I mainly use this for testing API endpoints, whether internal or external.
           </Tool>
           <Tool title="DB Forge Studio">
-            This is a great tool for MySQl queries. It's awesome that you can write queries in one place and access them from another.
-            It's been big help when I want to work from a laptop in bed.
+            This is a great tool for MySQl queries. It&apos;s awesome that you can write queries in one place and access them from another.
+            It&apos;s been big help when I want to work from a laptop in bed.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Design">
@@ -98,10 +98,10 @@ export default function Uses() {
             Really helps me to stay organized. Gives me the ability to schedule reocurring tasks and really plan my day and even week out.
           </Tool>
           <Tool title="Slack">
-            Great tool for communicating internally. Keeps track of certain conversations and allows conversations to be organized by "Channels."
+            Great tool for communicating internally. Keeps track of certain conversations and allows conversations to be organized by &quot;Channels.&quot;
           </Tool>
           <Tool title="Spotify">
-            I'm one of those people who loves to work with music in the background, a soft song can make all the difference in how quickly I enter a "Flow" state.
+            I&quot;m one of those people who loves to work with music in the background, a soft song can make all the difference in how quickly I enter a &quot;Flow&quot; state.
           </Tool>
         </ToolsSection>
       </div>
