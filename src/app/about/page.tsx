@@ -72,7 +72,7 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I've always loved building things, from my first lego set to writing music to building full stack web applications.
+              I&apos;ve always loved building things, from my first lego set to writing music to building full stack web applications.
               I have a passion for technology and learning new things.
             </p>
             <p>
