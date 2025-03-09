@@ -18,10 +18,27 @@ import reactLogo from '@/images/logos/reactLogo.svg'
 import cssLogo from '@/images/logos/cssLogo.svg'
 import dragIcon from '@/images/logos/dragIcon.svg'
 import appwriteLogo from '@/images/logos/appwriteLogo.png'
-import typescriptLogo from '@/images/logos/typescriptLogo.svg'
+import typescriptLogo from '@/images/logos/Typescript_logo_2020.svg'
 import disneyLogo from '@/images/logos/Disney+logo.svg'
+import chattLogo from '@/images/logos/chatty.jpg'
+import postgresqlLogo from '@/images/logos/postgresql.svg'
+import geminiLogo from '@/images/logos/google-gemini-icon.svg'
 
 const projects = [
+  {
+    name: 'Chatty AI Chatbot Creator',
+    description:
+      'Allowing users to create their own AI chatbots to provide support to customers.',
+    link: { href: 'https://chatty-chatbot-creator-bwzm63wbd-parkerarchibalds-projects.vercel.app/', label: 'chatty-chatbot-creator' },
+    logo: chattLogo,
+    tech: [
+      nextLogo,
+      postgresqlLogo,
+      tailwindLogo,
+      typescriptLogo,
+      geminiLogo
+    ]
+  },
   {
     name: 'Disney Plus Clone',
     description:
