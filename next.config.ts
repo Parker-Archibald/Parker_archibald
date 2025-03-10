@@ -1,6 +1,6 @@
 const cspHeader = `
     default-src 'self';
-    frame-src https://chatty-chatbot-creator-ck7w5swky-parkerarchibalds-projects.vercel.app/chatbot/11
+    frame-src *
 `
 
 module.exports = {
