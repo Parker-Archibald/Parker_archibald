@@ -4,6 +4,7 @@ import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
+import ChatBot from '@/components/ChatBot'
 
 export const metadata: Metadata = {
   title: {
@@ -30,7 +31,10 @@ export default function RootLayout({
       <body className="flex h-full bg-zinc-50 dark:bg-black">
         <Providers>
           <div className="flex w-full">
-            <Layout>{children}</Layout>
+            <Layout>
+              {children}
+              <ChatBot />
+            </Layout>
           </div>
         </Providers>
       </body>
