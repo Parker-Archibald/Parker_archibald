@@ -28,7 +28,7 @@ const projects = [
   {
     name: 'Chatty AI Chatbot Creator',
     description:
-      'Allowing users to create their own AI chatbots to provide support to customers.',
+      'Allowing users to create their own AI chatbots to provide support to customers, these chatbots can be embedded on another page. Users can also track conversations and see some key metrics about the chatbot.',
     link: { href: 'https://chatty-chatbot-creator-bwzm63wbd-parkerarchibalds-projects.vercel.app/', label: 'chatty-chatbot-creator' },
     logo: chattLogo,
     tech: [
@@ -42,7 +42,7 @@ const projects = [
   {
     name: 'Disney Plus Clone',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
+      'A simple web application pulling movie information from the TMDB database. Each API pull has cached requests to make page loading quicker.',
     link: { href: 'https://disney-plus-clone-9g12.vercel.app/', label: 'disney-plus-clone' },
     logo: disneyLogo,
     tech: [
@@ -55,7 +55,7 @@ const projects = [
   {
     name: 'Favorite Components',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
+      'This simple page displays some of the components that I have built, such as a calculator, pricing cards, OTP verification and more!',
     link: { href: 'https://favorite-components.vercel.app/', label: 'favorite-components' },
     logo: favoriteComponents,
     tech: [
@@ -68,7 +68,7 @@ const projects = [
   {
     name: 'Drag & Drop',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
+      'This simple kanban style task manager accesses react beautiful dnd to be able to drag added tasks between columns. The application has full CRUD functionality utilizing Firebase and Firebase Storage.',
     link: { href: 'https://drag-and-drop-tau-six.vercel.app/', label: 'drag-&-drop' },
     logo: dragIcon,
     tech: [
@@ -81,7 +81,7 @@ const projects = [
   {
     name: 'Hulu Clone',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
+      'A visually pleasing clone of the popular TV service, HULU. Leverages lazy loading to display movies pulled in from the TMDB database.',
     link: { href: 'https://hulu-clone-kappa-two.vercel.app/?genre=fetchTrending', label: 'hulu-clone' },
     logo: huluLogo,
     tech: [
@@ -93,7 +93,7 @@ const projects = [
   {
     name: 'Instagram Clone',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
+      'A real-time basic instagram clone application that verifies users using next-auth. Authenticated users can then create posts, like posts, comment on posts and delete posts.',
     link: { href: 'https://insta-clone-red-ten.vercel.app/', label: 'insta-clone' },
     logo: instagramLogo,
     tech: [
@@ -106,7 +106,7 @@ const projects = [
   {
     name: 'Sorting Visualizer',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
+      'Super cool visualization of popular sorting methods such as: Bubble sort, Selection sort, Quick sort and Insertion sort.',
     link: { href: 'https://sort-visualizer-opal.vercel.app/', label: 'sort-vizualizer' },
     logo: sortLogo,
     tech: [
@@ -118,7 +118,7 @@ const projects = [
   {
     name: 'Lyric Finder',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
+      'A basic lyric finding application. Access a Genius lyric API to provide information about songs. User can then search for an artist or song which will provide lyric information for that song.',
     link: { href: 'https://song-lyrics-ten.vercel.app/', label: 'song-lyrics' },
     logo: lyricLogo,
     tech: [
@@ -127,19 +127,19 @@ const projects = [
       javascriptLogo
     ]
   },
-  {
-    name: 'Slack Clone',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: 'https://slackclone-40f8f.web.app/', label: 'slack-clone' },
-    logo: slackLogo,
-    tech: [
-      reactLogo,
-      javascriptLogo,
-      cssLogo,
-      firebaseLogo
-    ]
-  },
+  // {
+  //   name: 'Slack Clone',
+  //   description:
+  //     'The schematics for the first rocket I designed that successfully made it to orbit.',
+  //   link: { href: 'https://slackclone-40f8f.web.app/', label: 'slack-clone' },
+  //   logo: slackLogo,
+  //   tech: [
+  //     reactLogo,
+  //     javascriptLogo,
+  //     cssLogo,
+  //     firebaseLogo
+  //   ]
+  // },
 ]
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
