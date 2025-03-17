@@ -56,7 +56,7 @@ export default function Uses() {
             I love this 49&quot;, 240hz monitor. There is plenty of real estate to have several programs open at once.
             Multi-tasking on this monitor is seamless and I tend to use the full 49&quot; everytime I turn on my computer.
           </Tool>
-          <Tool title="Variuos range of custom keyboards">
+          <Tool title="Various range of custom keyboards">
             It&apos;s true, I like to build my own keyboards. This includes picking out a case and configuring it for certain sound signatures.
             I then select switches for a desired typing feel, then add on keycaps to spruce up the look!
           </Tool>
