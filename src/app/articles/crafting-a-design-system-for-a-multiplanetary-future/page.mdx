@@ -2,11 +2,11 @@ import { ArticleLayout } from '@/components/ArticleLayout'
 import designSystem from './planetaria-design-system.png'
 
 export const article = {
-  author: 'Adam Wathan',
-  date: '2022-09-05',
-  title: 'Crafting a design system for a multiplanetary future',
+  author: 'Parker Archibald',
+  date: '2025-03-17',
+  title: 'Caching API calls for quicker data fetching.',
   description:
-    'Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.',
+    "A big part of a customer&apos;s experience is how quickly they can get to where they are wanting to go. Having cached API calls not only speeds up the data fetching process, but also improves your API call limitations.",
 }
 
 export const metadata = {
@@ -16,75 +16,53 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
+A big part of a customer&apos;s experience is how quickly they can get to where they are wanting to go. Having cached API calls on server components not only speeds up the data fetching process for all customers, but also improves your API call limitations.
 
-<Image src={designSystem} alt="" />
+Caching and re-fetching API calles is super simple in Nextjs with the [Revalidate](https://nextjs.org/docs/14/app/building-your-application/data-fetching/fetching-caching-and-revalidating) option. In the past month I utilized
+while building out [Disney Plus Clone](https://disney-plus-clone-9g12.vercel.app/) for my portfolio. In this project, I fetch movie data from the [TMDB](https://www.themoviedb.org/?language=en-US) 
+database, and display lists of movies and suggested movies based off of that movie. If this was a high traffic webpage, having each page calling the API would be very cumbersome. Luckily, we have
+the [Revalidate](https://nextjs.org/docs/14/app/building-your-application/data-fetching/fetching-caching-and-revalidating) option in Nextjs!
 
-I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
+```js
+const data = fetch(url)
+const response = await fetch(url);
+```
 
-## Sermone fata
+## Revalidate
 
-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+By default, Next.js automatically caches the returned values of `fetch()` in the Data Cache on the server, which means that the fetched data can be-reused without having to re-fetch it. 
 
-Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
-levitate quas ubi arcum ripas oculos abest. Adest [commissaque
-victae](#) in gemitus nectareis ire diva
-dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
-nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
-nil utinam paternos ima, commentaque.
+Revalidating is the process of clearing out the Data Cache and re-fetching the latest data. This can be done in two ways:
 
-```c
-exbibyte_wins = gigahertz(3);
-grayscaleUtilityClient = control_uat;
-pcmciaHibernate = oop_virus_console(text_mountain);
-if (stateWaisFirewire >= -2) {
-    jfs = 647065 / ldapVrml(tutorialRestore, 85);
-    metal_runtime_parse = roomComputingResolution - toolbarUpload +
-            ipx_nvram_open;
-} else {
-    maximizeSidebar *= suffix_url(flatbed + 2, requirements_encoding_node +
-            only_qbe_media, minicomputer);
+- [Time-based revalidation](https://nextjs.org/docs/14/app/building-your-application/data-fetching/fetching-caching-and-revalidating#time-based-revalidation)
+- [On-demand or Forced revalidation](https://nextjs.org/docs/14/app/building-your-application/data-fetching/fetching-caching-and-revalidating#on-demand-revalidation)
+
+### Time-based revalidation
+Sometimes you want to be able to only re-fetch data after a certain amount of time, for example, an API refreshes their data at the end of each day. There would be no use in fetching this data over and over
+so being able to only re-fetch it after a certain amount of time would be extremely useful. Adding the next revalidate option with the amount of time ensures that the cached data from the server is used
+until the specified amount of time is reached to revalidate. In the case below, we will re-fetch the data if the fetch request is sent 24 hours after the initial `fetch()`
+
+```js
+const data = fetch(url, {next: {revalidate: 60 * 60 * 24}})
+const response = await fetch(url);
+```
+
+## On-demand Revalidation
+On-demand revalidation allows you to manually revalidate based on an event (for example, if a form was submitted). This option allows you to use a tag-based or path-based approach.
+
+1. In Next.js, you have the option to "Tag" your cached entry with one or more tags. These tags are then usable to force a revalidation.
+```js
+const data = fetch(url, {next: {tags: ['Movies']}})
+const response = await fetch(url);
+```
+2. When you want to force a revalidation, you simply utilize `revalidateTag()` from `next/cache` to revalidate the cached item by passing in the tag that you set earlier
+```js
+import {revalidateTag} from 'next/cache'
+
+const revalidateMovies = async () => {
+    await revalidateTag('Movies)
 }
 ```
 
-Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc
-oscula nomina pignora corpus deserat.
 
-## Lethaei Pindumve me quae dinumerat Pavor
-
-Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
-divite: et ille illa furit sim verbis Cyllenius.
-
-1. Captus inpleverunt collo
-2. Nec nam placebant
-3. Siquos vulgus
-4. Dictis carissime fugae
-5. A tacitos nulla viginti
-
-Ungues fistula annoso, ille addit linoque motatque uberior verso
-[rubuerunt](#) confine desuetaque. _Sanguine_ anteit
-emerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine
-fossas Cephisos formosa! Refugitque amata [refelli](#)
-supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
-regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
-ars talis.
-
-```c
-digital.webcam_dual_frequency = webmasterMms;
-if (5 + language_standalone_google) {
-    cc_inbox_layout *= file_character;
-    task += p;
-    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
-            adf);
-}
-windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
-        dongleBashThumbnail), interpreter);
-```
-
-Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
-proelia: illo patrio _esse summus_, enim sua serpentibus, Hyleusque. Est coniuge
-recuso; refert Coroniden ignotos manat, adfectu.
+Next.js has some really amazing tools to provide users with seamless experiences, and I think that having the ability to control caching on fetched datas is extremely powerful. 
