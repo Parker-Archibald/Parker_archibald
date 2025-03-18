@@ -1,0 +1,71 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import chattyLogin from './chattyLogin.png'
+import chattyHome from './chattyHome.png'
+import chattyCreate from './chattyCreate.png'
+import chattySession from './chattySession.png'
+
+export const article = {
+  author: 'Parker Archibald',
+  date: '2025-03-11',
+  title: 'Chatty: A chatbot creator utilizing Google Gemini AI and a PostgreSQL database.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+AI has taken a giant leap over the past few years and I was able to show off some AI capabilities with this project. Being able to customize the information that the chatbot knows
+and track the conversations that users have with it has been super exciting to see. I really enjoyed working with this stack and learned a lot.
+
+## The Tech
+
+### Next.js and TailwindCSS
+The tech stack that I used for this project was significantly different than my other recent projects, which really helped me broaden my capabilities. I did maintain my framework and CSS library, Next.js
+and TailwindCSS.
+
+### Clerk
+I went a different route than my normal next-auth and used <a href='https://clerk.com/' target='_blank'>Clerk Authentication</a>, which not only handled the 
+authentication, but also provided some pretty cool components like this login page.
+
+<Image src={chattyLogin} alt="" />
+
+What I loved about clerk was how simple it was to implement, a simple <a href='https://clerk.com/docs/quickstarts/nextjs' target='_blank'>installation</a> and you're ready for setup.
+Once I had Clerk installed, I setup clerk's middleware, and then wrapped the entire application using Clerk's `<ClerkProvider>`. This allowed me to use some really quick and easy components to handle 
+any authentication and profile information.
+
+### Neon - PostgreSQL database
+
+<a href='https://neon.tech/' target='_blank'>Neon</a> was a new addition for me, I have worked with several relation databases, but PostgreSQL was one that I never had an opportunity to use. Neon was super
+simple to set up and really took some of the pressure of learning a new database off of my shoulders.
+
+<Image src={chattyHome} alt="" />
+
+### Stepzen
+In conjunction with Neon, I used a technology formerly known as <a href='https://stepzen.com/' target='_blank'>Stepzen</a> (they were bought by IBM), to create my graphQL. This was another technology that really assisted me in simpliflying
+learning a new database.
+
+## The project
+Chatty allows you login, create a chatbot and then teach the chatbot certain information about what it should be doing. For example, for my portfolio website I taught it some of my hobbies and what technology
+I like to use. This information is then passed through Google Gemini's AI API which generates a response based off of the information that it was given. 
+
+<Image src={chattyCreate} alt="" />
+
+The other cool thing about this project is each chat is stored in the database and can be viewed by the owner of the chat. This gives the user the capability to check on what conversations are being had
+with the bot and what additional information they may need to feed it.
+
+<Image src={chattySession} alt="" />
+
+<a href='https://chatty-chatbot-creator-bwzm63wbd-parkerarchibalds-projects.vercel.app/login' target='_blank' className='flex space-x-4 items-center cursor-pointer' >
+    <div className='size-6'>
+        <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+            <path
+            d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
+            fill="currentColor"
+            />
+        </svg>
+    </div>
+    <p className=''>chatty-chatbot-creator</p>
+</a>

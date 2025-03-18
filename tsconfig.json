@@ -35,7 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.mjs",
-    "src/app/testing/page.js"
+    "src/app/testing/page.js",
+    "src/app/project/sorting-vizualizer/page.mdx"
   ],
   "exclude": [
     "node_modules"
